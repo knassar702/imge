@@ -17,7 +17,7 @@ print(r'''
 /_/_/_/_/\_, /\__/ 
         /___/  
 {yellow}
-[Credit : Khaled Nassar @knassar702]
+[Credits : Khaled Nassar @knassar702]
 {end}'''.format(red=red,yellow=yellow,end=end))
 lefunny = lefunny()
 imgflip = imgflip()
