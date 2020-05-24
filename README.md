@@ -93,5 +93,33 @@ $ python3 imge.py -n 10 -t 20 --Dump
 $ python3 imge.py -n 5 --file='images_file'
 ```
 
+### use imge in your python project
+```python
+# imge path : /mypath/imge
+# mypath : /mypath
+from imge import lefunny,imgflip
+lefunny = lefunny()
+# dump the list
+print(lefunny.dump_list())
+for n,w in lefunny.dump_list().items():
+	print(f'[{n}] {w[0]}')
+# download
+# lefunny.get(page,image_link)
+lefunny.get(10,lefunny.dump_list()[12][1]) # download (number of page , link of list)
+# download with dump all urls
+lefunny.get(10,lefunny.dump_list()[12][1],Dump=True)
+# Dumping without download 
+lefunny.get(10,lefunny.dump_list()[12][1],dump=True)
+#------------------
+# Download from imgflip
+imgflip.get_memes(10) # imgflip.get_memes(number of page)
+# Download from imgflip and dump all urls
+imgflip.get_memes(10,Dump=True)
+# Dump all urls from imgflip without download
+imgflip.get_memes(10,dump=True)
 
+```
+#### Scraping from : 
+* https://lefunny.net
+* https://imgflip.com
 ### Credit : Khaled Nassar <a href='mailto:knassar702@gmail.com'>@knassar702</a>
