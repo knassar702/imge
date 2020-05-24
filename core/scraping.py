@@ -21,7 +21,7 @@ class lefunny:
 			x = x + 1
 			d[x] = [f'{the_list}',f'{a_tag["href"]}']
 		return d
-	def get_memes(self,page,the_link):
+	def get(self,page,the_link):
 		req = requests.get(f'{the_link}page/{page}',headers={'User-agent':ua.random}).content
 		soup = BeautifulSoup(req, "html.parser")
 		ancher = soup.find_all('div', {'class': "entry-summary"})
