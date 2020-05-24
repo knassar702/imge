@@ -38,8 +38,8 @@ if opts.help:
 	print('''
 	-h,--help      | Show help message and exit
 	-t,--threads   | Max number of concurrent requests (default: 10)
-	-f,--file      | Saving Memes in This path (--file='image_file')
-	-p,--page      | number of Memes pages
+	-f,--file      | Saving in Custom Path (--file='image_file')
+	-p,--page      | number of website pages
 	-d,--dump      | Dump Links Without Download
 	-l,--list      | Dump all lists
 	-D,--Dump      | Dump Links With Download it
