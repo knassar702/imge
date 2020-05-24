@@ -1,5 +1,5 @@
 # imge
-#### open source tool for downloading image from random websites
+#### open source tool for downloading images from random websites
 
 <img src='src/imge.png'>
 
