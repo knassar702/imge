@@ -18,8 +18,7 @@ print(r'''
         /___/  
 {yellow}
 [Credit : Khaled Nassar @knassar702]
-{end}
-	'''.format(red=red,yellow=yellow,end=end))
+{end}'''.format(red=red,yellow=yellow,end=end))
 lefunny = lefunny()
 imgflip = imgflip()
 q = Queue()
@@ -38,14 +37,14 @@ opts, args = optp.parse_args()
 if opts.help:
 	print('''
 	-h,--help      | Show help message and exit
-	-t,--threads   | Max number of concurrent requests for Downloading Memes (default: 10)
+	-t,--threads   | Max number of concurrent requests (default: 10)
 	-f,--file      | Saving Memes in This path (--file='image_file')
 	-p,--page      | number of Memes pages
-	-d,--dump	   | Dump Links Without Download
+	-d,--dump      | Dump Links Without Download
 	-l,--list      | Dump all lists
 	-D,--Dump      | Dump Links With Download it
 	-n,--number    | Number of item (-n=21)
-		''')
+	''')
 	exit()
 if opts._dump:
 	_dump = True
@@ -89,12 +88,12 @@ else:
 def threader_lefunny():
 	while True:
 		item = q.get()
-		lefunny.get(item,the_link)
+		lefunny.get(item,the_link,dump=_dump,Dump=_Dump)
 		q.task_done()
 def threader_imgflip():
 	while True:
 		item2 = w.get()
-		imgflip.get_memes(item2)
+		imgflip.get_memes(item2,dump=_dump,Dump=_Dump)
 		w.task_done()
 
 if __name__ == '__main__':
