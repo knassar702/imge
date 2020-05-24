@@ -85,6 +85,18 @@ if opts.thr:
 	thr = opts.thr
 else:
 	thr = 10
+if opts._number == None:
+	print('''
+	-h,--help      | Show help message and exit
+	-t,--threads   | Max number of concurrent requests (default: 10)
+	-f,--file      | Saving in Custom Path (--file='image_file')
+	-p,--page      | number of website pages
+	-d,--dump      | Dump Links Without Download
+	-l,--list      | Dump all lists
+	-D,--Dump      | Dump Links With Download it
+	-n,--number    | Number of item (-n=21)
+	''')
+	exit()
 def threader_lefunny():
 	while True:
 		item = q.get()
