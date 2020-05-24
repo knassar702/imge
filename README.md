@@ -103,19 +103,32 @@ lefunny = lefunny()
 print(lefunny.dump_list())
 for n,w in lefunny.dump_list().items():
 	print(f'[{n}] {w[0]}')
+
 # download
+
 # lefunny.get(page,image_link)
+
 lefunny.get(10,lefunny.dump_list()[12][1]) # download (number of page , link of list)
+
 # download with dump all urls
+
 lefunny.get(10,lefunny.dump_list()[12][1],Dump=True)
+
 # Dumping without download 
+
 lefunny.get(10,lefunny.dump_list()[12][1],dump=True)
+
 #------------------
+
 # Download from imgflip
+
 imgflip.get_memes(10) # imgflip.get_memes(number of page)
 # Download from imgflip and dump all urls
+
 imgflip.get_memes(10,Dump=True)
+
 # Dump all urls from imgflip without download
+
 imgflip.get_memes(10,dump=True)
 
 ```
