@@ -21,21 +21,31 @@ class lefunny:
 			x = x + 1
 			d[x] = [f'{the_list}',f'{a_tag["href"]}']
 		return d
-	def get(self,page,the_link):
+	def get(self,page,the_link,dump=None,Dump=None):
 		req = requests.get(f'{the_link}page/{page}',headers={'User-agent':ua.random}).content
 		soup = BeautifulSoup(req, "html.parser")
 		ancher = soup.find_all('div', {'class': "entry-summary"})
 		for pt in ancher:
 			img = pt.find('img', {'class': 'alignleft post-thumbnail wp-post-image'})
 			if img:
-				r = requests.get(img['src'],headers={'User-agent':ua.random})
-				f = open(img['src'].split('/')[7],'wb')
-				f.write(r.content)
-				f.close()
+				if dump:
+					print(img['src'])
+				elif Dump:
+					print(img['src'])
+					r = requests.get(img['src'],headers={'User-agent':ua.random})
+					f = open(img['src'].split('/')[7],'wb')
+					f.write(r.content)
+					f.close()
+				else:
+					r = requests.get(img['src'],headers={'User-agent':ua.random})
+					f = open(img['src'].split('/')[7],'wb')
+					f.write(r.content)
+					f.close()
+
 class imgflip:
 	def __init__(slef):
 		pass
-	def get_memes(self,page):
+	def get_memes(self,page,dump=None,Dump=None):
 		req = requests.get(f'https://imgflip.com/?page={page}',headers={'User-agent':ua.random}).content
 		soup = BeautifulSoup(req, "html.parser")
 		ancher = soup.find_all('div', {'class': "base-unit clearfix"})
@@ -43,7 +53,16 @@ class imgflip:
 			img = pt.find('img', {'class': 'base-img'})
 			if img:
 				link = img['src'].replace(img['src'][0:2],'https://')
-				r = requests.get(link,headers={'User-agent':ua.random})
-				f = open(img['src'].split('/')[3],'wb')
-				f.write(r.content)
-				f.close()
+				if dump:
+					print(link)
+				elif Dump:
+					print(link)
+					r = requests.get(link,headers={'User-agent':ua.random})
+					f = open(img['src'].split('/')[3],'wb')
+					f.write(r.content)
+					f.close()
+				else:
+					r = requests.get(link,headers={'User-agent':ua.random})
+					f = open(img['src'].split('/')[3],'wb')
+					f.write(r.content)
+					f.close()
