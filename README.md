@@ -135,4 +135,4 @@ imgflip.get_memes(10,dump=True)
 #### Scraping from : 
 * https://lefunny.net
 * https://imgflip.com
-### Credit : Khaled Nassar <a href='mailto:knassar702@gmail.com'>@knassar702</a>
+### Credits : Khaled Nassar <a href='mailto:knassar702@gmail.com'>@knassar702</a>
